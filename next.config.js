@@ -2,7 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['www.yamanashi-kankou.jp']
+    domains: [
+      'raw.githubusercontent.com',
+      "lh3.googleusercontent.com"
+  ]
   }
 }
 
