@@ -30,6 +30,12 @@ const onVideoPress = () => {
     }
 }
 
+useEffect(() => {
+    if(videoRef?.current) {
+        videoRef.current.muted = isVideoMuted
+    }
+}, [isVideoMuted])
+
   return (
     <div className="flex flex-col border-b-2
     border-gray-200">
@@ -97,14 +103,14 @@ const onVideoPress = () => {
                             <button onClick={onVideoPress}>
                                 <BsFillPauseFill 
                                     className="text-white
-                                    text-2xl lg:text-4xl"
+                                    text-2xl lg:text-4xl lg:text-black"
                                 />
                             </button>
                         ) : (
                             <button onClick={onVideoPress}>
                                 <BsFillPlayFill 
                                 className="text-white
-                                text-2xl lg:text-4xl"
+                                text-2xl lg:text-4xl lg:text-black"
                                 />
                             </button>
                         )}
@@ -112,14 +118,14 @@ const onVideoPress = () => {
                             <button onClick={() => setIsVideoMuted(false)}>
                                 <HiVolumeOff 
                                     className="text-white
-                                    text-2xl lg:text-4xl"
+                                    text-2xl lg:text-4xl lg:text-black"
                                 />
                             </button>
                         ) : (
                             <button onClick={() => setIsVideoMuted(true)}>
                                 <HiVolumeUp 
                                     className="text-white
-                                    text-2xl lg:text-4xl"
+                                    text-2xl lg:text-4xl lg:text-black"
                                 />
                             </button>
                         )}
